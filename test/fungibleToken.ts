@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import { FungibleToken } from "../typechain";
+import { AuthorisedToken } from "../typechain";
 import { expect } from "chai";
 import { ethers } from "hardhat";
 
@@ -13,9 +13,11 @@ describe("FungibleToken", () => {
 
   it("Should deploy the contract", async () => {
     const FungibleToken = await ethers.getContractFactory("FungibleToken");
-    const token: FungibleToken = await FungibleToken.deploy(user1.address);
-    await token.deployed();
+    const ft = await FungibleToken.deploy();
+    await ft.deployed();
 
-    expect(await token.recipient()).to.equal(user1.address);
+    const Shop = await ethers.getContractFactory("Shop");
+    const shop = await Shop.deploy(user1.address, ft.address);
+    await shop.deployed();
   });
 });
