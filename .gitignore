@@ -11,3 +11,6 @@ artifacts
 #Foundry files
 cache
 out
+
+#Generator
+assets_output
