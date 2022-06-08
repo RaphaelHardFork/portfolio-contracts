@@ -3,7 +3,7 @@
 pragma solidity ^0.8.13;
 
 import "./interfaces/IUserName.sol";
-import "./Shopable.sol";
+import "./abstracts/Shopable.sol";
 
 contract UserName is Shopable, IUserName {
     mapping(address => string) private _names;

@@ -8,7 +8,7 @@ import "openzeppelin-contracts/contracts/utils/Base64.sol";
 
 import "./library/IdToColor.sol";
 import "./interfaces/IColoredToken.sol";
-import "./Shopable.sol";
+import "./abstracts/Shopable.sol";
 
 contract ColoredToken is ERC721, IColoredToken, Shopable {
     using IdToColor for uint256;

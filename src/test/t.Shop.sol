@@ -8,6 +8,7 @@ import "../UserName.sol";
 import "../Shop.sol";
 import "../FungibleToken.sol";
 import "../ColoredToken.sol";
+import "../Cards.sol";
 
 contract Shop_test is DSTest {
     CheatCodes vm = CheatCodes(HEVM_ADDRESS);
@@ -15,14 +16,17 @@ contract Shop_test is DSTest {
     ColoredToken public nft;
     Shop public shop;
     UserName public names;
+    Cards public cards;
 
     function setUp() public {
         money = new FungibleToken();
         nft = new ColoredToken();
         names = new UserName();
-        shop = new Shop(nft, money, names);
+        cards = new Cards("ipfs://{hash}/");
+        shop = new Shop(nft, money, names, cards);
         nft.setShop(address(shop));
         names.setShop(address(shop));
+        cards.setShop(address(shop));
     }
 
     function testBuyColor(uint256 id_) public {
@@ -69,5 +73,43 @@ contract Shop_test is DSTest {
         money.approve(address(shop), 0);
         vm.expectRevert("ERC20: insufficient allowance");
         shop.buyName("name");
+    }
+
+    function testBuyBooster() public {
+        vm.startPrank(address(1));
+        money.mint(50 * 10**18);
+        money.approve(address(shop), 50 * 10**18);
+        shop.buyBooster();
+
+        assertEq(cards.balanceOf(address(1), 10003), 1);
+    }
+
+    function testCannotBuyBooster() public {
+        vm.startPrank(address(1));
+        money.approve(address(shop), 50 * 10**18);
+        vm.expectRevert("ERC20: transfer amount exceeds balance");
+        shop.buyBooster();
+
+        money.mint(50 * 10**18);
+        money.approve(address(shop), 0);
+        vm.expectRevert("ERC20: insufficient allowance");
+        shop.buyBooster();
+    }
+
+    function testOpenBooster() public {
+        vm.startPrank(address(1));
+        money.mint(50 * 10**18);
+        money.approve(address(shop), 50 * 10**18);
+        shop.buyBooster();
+
+        shop.openBooster(10003);
+
+        assertEq(cards.balanceOf(address(1), 10003), 0);
+    }
+
+    function testCannotOpenBooster() public {
+        vm.startPrank(address(1));
+        vm.expectRevert("You should have a booster");
+        shop.openBooster(10003);
     }
 }
