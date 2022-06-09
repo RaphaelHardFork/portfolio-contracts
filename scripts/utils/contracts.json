@@ -1,0 +1,789 @@
+{
+  "ropsten": {
+    "FungibleToken": {
+      "address": "0x2dD7A091e6F9759FB38E272E71a55a8c123258Bd",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "contract IColoredToken",
+              "name": "colorToken",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IERC20",
+              "name": "fungibleToken_",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IUserName",
+              "name": "names_",
+              "type": "address"
+            },
+            {
+              "internalType": "contract ICards",
+              "name": "cards_",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "name": "buyBooster",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "uint256", "name": "id_", "type": "uint256" }
+          ],
+          "name": "buyColor",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "string", "name": "name_", "type": "string" }
+          ],
+          "name": "buyName",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "cards",
+          "outputs": [
+            { "internalType": "contract ICards", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "colorPrice",
+          "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "colors",
+          "outputs": [
+            {
+              "internalType": "contract IColoredToken",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "fungibleToken",
+          "outputs": [
+            { "internalType": "contract IERC20", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "names",
+          "outputs": [
+            {
+              "internalType": "contract IUserName",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "uint256[]", "name": "", "type": "uint256[]" },
+            { "internalType": "uint256[]", "name": "", "type": "uint256[]" },
+            { "internalType": "bytes", "name": "", "type": "bytes" }
+          ],
+          "name": "onERC1155BatchReceived",
+          "outputs": [
+            { "internalType": "bytes4", "name": "", "type": "bytes4" }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "bytes", "name": "", "type": "bytes" }
+          ],
+          "name": "onERC1155Received",
+          "outputs": [
+            { "internalType": "bytes4", "name": "", "type": "bytes4" }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+          ],
+          "name": "openBooster",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "bytes4", "name": "", "type": "bytes4" }
+          ],
+          "name": "supportsInterface",
+          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+          "stateMutability": "pure",
+          "type": "function"
+        }
+      ]
+    },
+    "ColoredToken": {
+      "address": "0x2dD7A091e6F9759FB38E272E71a55a8c123258Bd",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "contract IColoredToken",
+              "name": "colorToken",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IERC20",
+              "name": "fungibleToken_",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IUserName",
+              "name": "names_",
+              "type": "address"
+            },
+            {
+              "internalType": "contract ICards",
+              "name": "cards_",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "name": "buyBooster",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "uint256", "name": "id_", "type": "uint256" }
+          ],
+          "name": "buyColor",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "string", "name": "name_", "type": "string" }
+          ],
+          "name": "buyName",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "cards",
+          "outputs": [
+            { "internalType": "contract ICards", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "colorPrice",
+          "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "colors",
+          "outputs": [
+            {
+              "internalType": "contract IColoredToken",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "fungibleToken",
+          "outputs": [
+            { "internalType": "contract IERC20", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "names",
+          "outputs": [
+            {
+              "internalType": "contract IUserName",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "uint256[]", "name": "", "type": "uint256[]" },
+            { "internalType": "uint256[]", "name": "", "type": "uint256[]" },
+            { "internalType": "bytes", "name": "", "type": "bytes" }
+          ],
+          "name": "onERC1155BatchReceived",
+          "outputs": [
+            { "internalType": "bytes4", "name": "", "type": "bytes4" }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "bytes", "name": "", "type": "bytes" }
+          ],
+          "name": "onERC1155Received",
+          "outputs": [
+            { "internalType": "bytes4", "name": "", "type": "bytes4" }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+          ],
+          "name": "openBooster",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "bytes4", "name": "", "type": "bytes4" }
+          ],
+          "name": "supportsInterface",
+          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+          "stateMutability": "pure",
+          "type": "function"
+        }
+      ]
+    },
+    "UserName": {
+      "address": "0x2dD7A091e6F9759FB38E272E71a55a8c123258Bd",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "contract IColoredToken",
+              "name": "colorToken",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IERC20",
+              "name": "fungibleToken_",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IUserName",
+              "name": "names_",
+              "type": "address"
+            },
+            {
+              "internalType": "contract ICards",
+              "name": "cards_",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "name": "buyBooster",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "uint256", "name": "id_", "type": "uint256" }
+          ],
+          "name": "buyColor",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "string", "name": "name_", "type": "string" }
+          ],
+          "name": "buyName",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "cards",
+          "outputs": [
+            { "internalType": "contract ICards", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "colorPrice",
+          "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "colors",
+          "outputs": [
+            {
+              "internalType": "contract IColoredToken",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "fungibleToken",
+          "outputs": [
+            { "internalType": "contract IERC20", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "names",
+          "outputs": [
+            {
+              "internalType": "contract IUserName",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "uint256[]", "name": "", "type": "uint256[]" },
+            { "internalType": "uint256[]", "name": "", "type": "uint256[]" },
+            { "internalType": "bytes", "name": "", "type": "bytes" }
+          ],
+          "name": "onERC1155BatchReceived",
+          "outputs": [
+            { "internalType": "bytes4", "name": "", "type": "bytes4" }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "bytes", "name": "", "type": "bytes" }
+          ],
+          "name": "onERC1155Received",
+          "outputs": [
+            { "internalType": "bytes4", "name": "", "type": "bytes4" }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+          ],
+          "name": "openBooster",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "bytes4", "name": "", "type": "bytes4" }
+          ],
+          "name": "supportsInterface",
+          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+          "stateMutability": "pure",
+          "type": "function"
+        }
+      ]
+    },
+    "Cards": {
+      "address": "0x2dD7A091e6F9759FB38E272E71a55a8c123258Bd",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "contract IColoredToken",
+              "name": "colorToken",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IERC20",
+              "name": "fungibleToken_",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IUserName",
+              "name": "names_",
+              "type": "address"
+            },
+            {
+              "internalType": "contract ICards",
+              "name": "cards_",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "name": "buyBooster",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "uint256", "name": "id_", "type": "uint256" }
+          ],
+          "name": "buyColor",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "string", "name": "name_", "type": "string" }
+          ],
+          "name": "buyName",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "cards",
+          "outputs": [
+            { "internalType": "contract ICards", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "colorPrice",
+          "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "colors",
+          "outputs": [
+            {
+              "internalType": "contract IColoredToken",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "fungibleToken",
+          "outputs": [
+            { "internalType": "contract IERC20", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "names",
+          "outputs": [
+            {
+              "internalType": "contract IUserName",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "uint256[]", "name": "", "type": "uint256[]" },
+            { "internalType": "uint256[]", "name": "", "type": "uint256[]" },
+            { "internalType": "bytes", "name": "", "type": "bytes" }
+          ],
+          "name": "onERC1155BatchReceived",
+          "outputs": [
+            { "internalType": "bytes4", "name": "", "type": "bytes4" }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "bytes", "name": "", "type": "bytes" }
+          ],
+          "name": "onERC1155Received",
+          "outputs": [
+            { "internalType": "bytes4", "name": "", "type": "bytes4" }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+          ],
+          "name": "openBooster",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "bytes4", "name": "", "type": "bytes4" }
+          ],
+          "name": "supportsInterface",
+          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+          "stateMutability": "pure",
+          "type": "function"
+        }
+      ]
+    },
+    "Shop": {
+      "address": "0x2dD7A091e6F9759FB38E272E71a55a8c123258Bd",
+      "abi": [
+        {
+          "inputs": [
+            {
+              "internalType": "contract IColoredToken",
+              "name": "colorToken",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IERC20",
+              "name": "fungibleToken_",
+              "type": "address"
+            },
+            {
+              "internalType": "contract IUserName",
+              "name": "names_",
+              "type": "address"
+            },
+            {
+              "internalType": "contract ICards",
+              "name": "cards_",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "nonpayable",
+          "type": "constructor"
+        },
+        {
+          "inputs": [],
+          "name": "buyBooster",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "uint256", "name": "id_", "type": "uint256" }
+          ],
+          "name": "buyColor",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "string", "name": "name_", "type": "string" }
+          ],
+          "name": "buyName",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "cards",
+          "outputs": [
+            { "internalType": "contract ICards", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "colorPrice",
+          "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "colors",
+          "outputs": [
+            {
+              "internalType": "contract IColoredToken",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "fungibleToken",
+          "outputs": [
+            { "internalType": "contract IERC20", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "names",
+          "outputs": [
+            {
+              "internalType": "contract IUserName",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "uint256[]", "name": "", "type": "uint256[]" },
+            { "internalType": "uint256[]", "name": "", "type": "uint256[]" },
+            { "internalType": "bytes", "name": "", "type": "bytes" }
+          ],
+          "name": "onERC1155BatchReceived",
+          "outputs": [
+            { "internalType": "bytes4", "name": "", "type": "bytes4" }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "address", "name": "", "type": "address" },
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "uint256", "name": "", "type": "uint256" },
+            { "internalType": "bytes", "name": "", "type": "bytes" }
+          ],
+          "name": "onERC1155Received",
+          "outputs": [
+            { "internalType": "bytes4", "name": "", "type": "bytes4" }
+          ],
+          "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
+          ],
+          "name": "openBooster",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "bytes4", "name": "", "type": "bytes4" }
+          ],
+          "name": "supportsInterface",
+          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+          "stateMutability": "pure",
+          "type": "function"
+        }
+      ]
+    }
+  }
+}
