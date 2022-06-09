@@ -1,3 +1,4 @@
+/* eslint-disable node/no-unsupported-features/es-syntax */
 /* eslint-disable no-process-exit */
 import { readFile, writeFile } from "fs/promises";
 import { Root } from "./deployment";
@@ -36,7 +37,7 @@ const createList = async () => {
     const file: any = await readFile(`out/${contract}.sol/${contract}.json`);
     const abi = JSON.parse(file).abi;
     _contract.abi = abi;
-    _contractName[contract] = _contract;
+    _contractName[contract] = { ..._contract };
   }
   _chain[hre.network.name] = _contractName;
 
