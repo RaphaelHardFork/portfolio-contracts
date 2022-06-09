@@ -1,10 +1,46 @@
 {
-  "list": ["FungibleToken"],
+  "list": ["FungibleToken", "ColoredToken", "UserName", "Cards", "Shop"],
   "contracts": {
     "FungibleToken": {
-      "goerli": {
-        "address": "0x9Bb7ab26573fFFE3a68D199D5a910F177F1B8975",
-        "constructorArgs": ["0x9086701Ecc7eFe724fC906DDF5Bf7D481FA3B055"],
+      "ropsten": {
+        "address": "0x6ADE5565192A85E4899868e887A7491BA4F4706F",
+        "isVerified": true,
+        "isProxy": false
+      }
+    },
+    "ColoredToken": {
+      "ropsten": {
+        "address": "0x8ec931f52F15864C0c3EFF123aEfc1feb971D577",
+        "isVerified": true,
+        "isProxy": false
+      }
+    },
+    "UserName": {
+      "ropsten": {
+        "address": "0x9481fD9C50a70b085fA51e82aCA381e9389b7550",
+        "isVerified": true,
+        "isProxy": false
+      }
+    },
+    "Cards": {
+      "ropsten": {
+        "address": "0x899506C2c0EF055958dD5685e221409505f10F70",
+        "constructorArgs": [
+          "ipfs://QmbPYzLk4hzRttP5qWpueUQzs8gnSHEdeV9fpNdsGChXUt/"
+        ],
+        "isVerified": true,
+        "isProxy": false
+      }
+    },
+    "Shop": {
+      "ropsten": {
+        "address": "0x2dD7A091e6F9759FB38E272E71a55a8c123258Bd",
+        "constructorArgs": [
+          "0x8ec931f52F15864C0c3EFF123aEfc1feb971D577",
+          "0x6ADE5565192A85E4899868e887A7491BA4F4706F",
+          "0x9481fD9C50a70b085fA51e82aCA381e9389b7550",
+          "0x899506C2c0EF055958dD5685e221409505f10F70"
+        ],
         "isVerified": true,
         "isProxy": false
       }

@@ -10,6 +10,9 @@ import "./abstracts/Shopable.sol";
 import "./interfaces/ICards.sol";
 
 contract Cards is ICards, Reserve, Shopable, ERC1155Supply {
+    string public name = "Useless playing cards";
+    string public symbol = "CARDS";
+
     uint256 private _lastBoosterId;
     uint256[] internal _cardsAmount;
     mapping(uint256 => uint256[]) private _boosterLink;
@@ -52,11 +55,15 @@ contract Cards is ICards, Reserve, Shopable, ERC1155Supply {
     }
 
     function uri(uint256 tokenId) public view override returns (string memory) {
+        string memory stringId = tokenId >= 10000
+            ? "10000"
+            : Strings.toString(tokenId);
+
         return
             string(
                 abi.encodePacked(
                     super.uri(0), // constructor=> "ipfs://{hash}/"
-                    Strings.toString(tokenId),
+                    stringId,
                     ".json"
                 )
             );

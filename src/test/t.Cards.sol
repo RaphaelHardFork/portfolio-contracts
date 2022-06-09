@@ -37,6 +37,8 @@ contract Cards_test is DSTest {
     function testUri() public {
         vm.startPrank(shop);
         cards.deliverBooster(address(2));
-        emit log_string(cards.uri(69));
+        assertEq(cards.uri(69), "ipfs://{hash}/69.json");
+        assertEq(cards.uri(10000), "ipfs://{hash}/10000.json");
+        assertEq(cards.uri(19000), "ipfs://{hash}/10000.json");
     }
 }

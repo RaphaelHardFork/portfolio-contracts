@@ -3,7 +3,7 @@
 pragma solidity ^0.8.13;
 
 library IdToColor {
-    bytes16 private constant _HEX_SYMBOLS = "0123456789abcdef";
+    bytes16 private constant _HEX_SYMBOLS = "0123456789ABCDEF";
 
     /**
      * @dev Converts a `uint256` to its ASCII `string` hexadecimal representation.

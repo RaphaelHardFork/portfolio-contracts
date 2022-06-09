@@ -16,10 +16,10 @@ type OpenseaMetadata = {
   image: string;
 };
 
-const descriptionFactory = (symbol: string, value: string) => {
+const descriptionFactory = (symbol: string, value: string, edition: string) => {
   return `This card is not really useful, its value (${
     value + symbol
-  }) as well, `;
+  }) as well. This is a collection of 9990 cards (excluding boosters), including 9720 cards (180x54) belonging to the "normal" edition and 270 cards (5x54) to the "rare" edition. \n\nThis card belong to the "${edition}" edition.`;
 };
 
 const valueToInfo = (value: number) => {
@@ -81,13 +81,13 @@ export const createCardMetadata = async (value: number, edition: string) => {
   );
   const hashList = edition === "normal" ? parsedJson.normal : parsedJson.rare;
   const cardMetadata: OpenseaMetadata = {
-    background_color: "222222",
+    background_color: edition === "normal" ? "EEEEEE" : "DDDDDD",
   } as OpenseaMetadata;
 
   // JOKER
   if (value === 52 || value === 53) {
     cardMetadata.name = "JOKER";
-    cardMetadata.description = ``; // TO FILL
+    cardMetadata.description = descriptionFactory("KER", "JO", edition); // TO FILL
     cardMetadata.attributes = [
       { trait_type: "Rarity", value: edition, max_value: undefined },
       {
@@ -108,7 +108,7 @@ export const createCardMetadata = async (value: number, edition: string) => {
     const [symbol, sign] = valueToSymbol(value);
 
     cardMetadata.name = `${code}${sign} - ${number} of ${symbol}`;
-    cardMetadata.description = ``;
+    cardMetadata.description = descriptionFactory(sign, code, edition);
     cardMetadata.attributes = [
       { trait_type: "Rarity", value: edition, max_value: undefined },
       { trait_type: "Symbol", value: symbol, max_value: undefined },

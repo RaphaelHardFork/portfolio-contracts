@@ -2,14 +2,14 @@
 import hre, { ethers } from "hardhat";
 import { deployed } from "./utils/deployment";
 
-const CONTRACT_NAME = "FungibleToken";
+const CONTRACT_NAME = "UserName";
 
 const main = async () => {
   const [deployer] = await ethers.getSigners();
   console.log("Deploying contracts with the account:", deployer.address);
 
-  const FungibleToken = await hre.ethers.getContractFactory(CONTRACT_NAME);
-  const token = await FungibleToken.deploy();
+  const UserName = await hre.ethers.getContractFactory(CONTRACT_NAME);
+  const token = await UserName.deploy();
   await token.deployed();
 
   // save into deployed.json

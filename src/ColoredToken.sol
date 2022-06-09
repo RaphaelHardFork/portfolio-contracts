@@ -46,8 +46,14 @@ contract ColoredToken is ERC721, IColoredToken, Shopable {
         returns (string memory)
     {
         string memory baseURI = _baseURI();
-        string
-            memory metadata = '{"name":"Beautiful color","description":"Small, on-chain, circle with unique color",';
+        string memory color = tokenId.toColor();
+        string memory metadata = string(
+            abi.encodePacked(
+                '{"name":"',
+                color,
+                ' is an unique color","description":"Unique on-chain circle of color, grab your color between the 16 777 215 available colors.",'
+            )
+        );
         string memory image = _baseImage(tokenId);
         return
             string(
