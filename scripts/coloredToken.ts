@@ -13,7 +13,13 @@ const main = async () => {
   await token.deployed();
 
   // save into deployed.json
-  await deployed(CONTRACT_NAME, hre.network.name, token.address, [], undefined);
+  await deployed(
+    CONTRACT_NAME,
+    hre.network.name,
+    token.address,
+    undefined,
+    undefined
+  );
 };
 
 main()
