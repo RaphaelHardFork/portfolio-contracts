@@ -47,12 +47,18 @@ contract FungibleToken is ERC20, Ownable {
     function ethToUsd(uint256 amount) public view returns (uint256) {
         // amount in wei
         return
-            (amount *
+            amount *
+            ((
                 ((((uint256(_oracle.lastestAnswer()) * PRECISION) / 10**8) *
-                    10**18) / PRECISION)) / 10**18;
+                    10**18) / PRECISION)
+            ) / 10**18);
     }
 
     function usdToEth(uint256 amount) public view returns (uint256) {
-        return amount / (uint256(_oracle.lastestAnswer()) * 10**10);
+        // amount in wei
+        return
+            amount /
+            (((((uint256(_oracle.lastestAnswer()) * PRECISION) / 10**8) *
+                10**18) / PRECISION) / 10**18);
     }
 }

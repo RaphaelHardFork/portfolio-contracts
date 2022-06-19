@@ -77,4 +77,37 @@ contract FungibleToken_test is DSTest {
         vm.expectRevert(bytes("You must donate at least 1$"));
         ft.mintMore{value: userValue}(500 * 10**18);
     }
+
+    function testWithdraw() public {
+        vm.startPrank(address(1));
+        vm.deal(address(1), 50 * 10**18);
+        ft.mintMore{value: 5 * 10**18}(500 * 10**18);
+
+        vm.startPrank(OWNER);
+        ft.withdraw();
+        assertEq(OWNER.balance, 5 * 10**18);
+    }
+
+    function testCannotAsNonOwner() public {
+        vm.startPrank(address(1));
+        vm.deal(address(1), 50 * 10**18);
+        ft.mintMore{value: 5 * 10**18}(500 * 10**18);
+
+        vm.expectRevert(bytes("Ownable: caller is not the owner"));
+        ft.setOracle(Oracle(address(2)));
+
+        vm.expectRevert(bytes("Ownable: caller is not the owner"));
+        ft.withdraw();
+    }
+
+    function testViewFunctions() public {
+        // price = 105000000000
+        // 500 000 wei usd = 476 wei eth
+        // 50 wei eth = 52499 wei usd
+
+        uint256 usdOutput = ft.ethToUsd(50);
+        uint256 ethOutput = ft.usdToEth(500000);
+        assertEq(usdOutput, 52500);
+        assertEq(ethOutput, 476);
+    }
 }

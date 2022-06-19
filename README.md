@@ -2,7 +2,7 @@
 
 ## Security specification
 
-**Owner's role:**
+**Trust model:**
 
 _Ownable's roles like `transferOwnership` are implicit_
 
@@ -19,9 +19,8 @@ _Ownable's roles like `transferOwnership` are implicit_
 
 => security spec: what can do the owner
 
-- test buy all booster
 - fix name of the color
-- erc20 donate for 1000 msg.value > ~0.5$ => multiple oracle price took the median
+- test buy all booster
 - shop is conttroller => see the contract controller => good to have multiple controller
 - change shop on contracts => need ownable?
 - set shop only owner
