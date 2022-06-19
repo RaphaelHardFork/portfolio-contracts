@@ -11,6 +11,7 @@ import "./interfaces/IColoredToken.sol";
 import "./abstracts/Shopable.sol";
 
 contract ColoredToken is ERC721, IColoredToken, Shopable {
+    using Address for address payable;
     using IdToColor for uint256;
     uint256 public immutable maxColor;
 
@@ -27,9 +28,14 @@ contract ColoredToken is ERC721, IColoredToken, Shopable {
         _mint(receiver, id_);
     }
 
-    function burnColor(uint256 id_) external override {
+    function burnColor(uint256 id_) external payable override {
+        require(msg.value >= 5 * 10**13, "Cost must at least 0.00005 ETH");
         require(ownerOf(id_) == msg.sender, "You should own the color");
         _burn(id_);
+    }
+
+    function withdraw() external onlyOwner {
+        payable(msg.sender).sendValue(address(this).balance);
     }
 
     function ownerOf(uint256 id) public view override returns (address) {

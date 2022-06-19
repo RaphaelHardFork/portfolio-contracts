@@ -2,31 +2,37 @@
 
 ## Security specification
 
-**Trust model:**
+### Trust model:
 
 _Ownable's roles like `transferOwnership` are implicit_
 
-- FungibleToken:
+- **FungibleToken:**
   - Can set oracle address
   - Can withdraw eth amount in the contract
+- **Shopable contracts (ColoredToken):**
+  - Owner can set/remove an address as "shop" (controller)
+- **ColoredToken:**
+  - Owner can withdraw eth amount in the contract
 
-**FungibleToken:**
+### FungibleToken:
 
 - Token not capped, totalSupply potentially unlimited
 - Oracle price rely on one oracle source (chainLink, Flux on Aurora network)
 
+### ColoredToken:
+
+- burning a token cost 0.00005 ETH, this cost can be avoided by transfering to a random address that not own a token.
+
+---
+
 ## To Do
 
-=> security spec: what can do the owner
-
-- fix name of the color
-- test buy all booster
-- shop is conttroller => see the contract controller => good to have multiple controller
-- change shop on contracts => need ownable?
-- set shop only owner
-- _owner is time-locked multisig => centralise owner so (can be done after with transferOwnership)_
+- test buy all booster / check token URI (booster) / check distribution 180/5
+- test shop/ change shop / several shop
 
 Integrate in the front
+
+- _owner is time-locked multisig => centralise owner so (can be done after with transferOwnership)_
 
 ---
 

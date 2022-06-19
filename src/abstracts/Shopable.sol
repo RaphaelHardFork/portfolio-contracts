@@ -2,18 +2,25 @@
 
 pragma solidity ^0.8.13;
 
-abstract contract Shopable {
-    address public shop;
+import "openzeppelin-contracts/contracts/access/Ownable.sol";
 
-    function setShop(address shop_) external {
-        if (shop != address(0)) {
-            require(msg.sender == shop, "Only shop have access");
-        }
-        shop = shop_;
+/**
+ * @notice Inspired by Controllable.sol
+ * https://github.com/ensdomains/ens-contracts/blob/master/contracts/wrapper/Controllable.sol
+ * */
+
+abstract contract Shopable is Ownable {
+    mapping(address => bool) public shops;
+
+    event ShopManaged(address indexed shop, bool indexed active);
+
+    function setShop(address shop, bool active) external onlyOwner {
+        shops[shop] = active;
+        emit ShopManaged(shop, active);
     }
 
     modifier onlyShop() {
-        require(msg.sender == shop, "Only shop have access");
+        require(shops[msg.sender], "Shopable: shop not allowed");
         _;
     }
 }
