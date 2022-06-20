@@ -29,32 +29,9 @@ _Ownable's roles like `transferOwnership` are implicit_
 - `deliverBooster` use a pseudorandom, the 5 cards linked to a booster are predictable. However user cannot revert the transaction (with `onERC1155Received`) when buying a booster as cards are delivered to the shop contract.
 - `deliverBooster` function is gas expensive (average: 233996, max: 568085)
 
----
-
-## To Do
-
-- test shop/ change shop / several shop
-
-Integrate in the front
-
-In the Template => `forge install foundry-rs/forge-std`
-
-- change test with exemple of emit event, storage read
-
-* _owner is time-locked multisig => centralise owner so (can be done after with transferOwnership)_
-
----
-
-- shop UUPS with new contracts (v1,v2,...) => upgrades integration in template
-- signature => nft for 0 ethers != with some => two image => ERC721 is good, cannot transfer to force the meta-tx => mint and transfer only if 0 eth
-
-## Standard to implement
-
-- diamond-like pattern
-- clones proxy
-- royalties with payment splitter => find an exemple of collections/theme
-
 ## Oracles
+
+_network(pair|decimal)_
 
 ### Chainlink
 
@@ -64,4 +41,21 @@ In the Template => `forge install foundry-rs/forge-std`
 
 ### Flux
 
-**Aurora (ETH/USD):** 0xA8Ac2Fa1D239c7d96046967ED21503D1F1fB2354
+**Aurora (ETH/USD|8):** 0xA8Ac2Fa1D239c7d96046967ED21503D1F1fB2354
+
+---
+
+## To Do
+
+Integrate in the front
+
+- _owner is time-locked multisig => centralise owner so (can be done after with transferOwnership)_
+
+- shop UUPS with new contracts (v1,v2,...) => upgrades integration in template
+- signature => nft for 0 ethers != with some => two image => ERC721 is good, cannot transfer to force the meta-tx => mint and transfer only if 0 eth
+
+### Standard to implement
+
+- diamond-like pattern
+- clones proxy
+- royalties with payment splitter => find an exemple of collections/theme
