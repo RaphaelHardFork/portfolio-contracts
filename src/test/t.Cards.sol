@@ -3,24 +3,29 @@
 pragma solidity ^0.8.10;
 
 import "ds-test/test.sol";
+import "forge-std/Vm.sol";
+
 import "./cheatCodes.sol";
 
 import "../Cards.sol";
 
 contract Cards_test is DSTest {
+    using stdStorage for StdStorage;
     CheatCodes vm = CheatCodes(HEVM_ADDRESS);
     Cards public cards;
-    address public shop = address(1);
+    address public constant SHOP = address(501);
+    address public constant OWNER = address(301);
 
     function setUp() public {
+        vm.startPrank(OWNER);
         cards = new Cards("ipfs://{hash}/");
-        cards.setShop(shop);
+        cards.setShop(SHOP);
         vm.warp(365);
         vm.roll(125);
     }
 
     function testDeliverBooster() public {
-        vm.startPrank(shop);
+        vm.startPrank(SHOP);
 
         cards.deliverBooster(address(2));
 

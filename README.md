@@ -32,7 +32,11 @@ _Ownable's roles like `transferOwnership` are implicit_
 
 Integrate in the front
 
-- _owner is time-locked multisig => centralise owner so (can be done after with transferOwnership)_
+In the Template => `forge install foundry-rs/forge-std`
+
+- change test with exemple of emit event, storage read
+
+* _owner is time-locked multisig => centralise owner so (can be done after with transferOwnership)_
 
 ---
 

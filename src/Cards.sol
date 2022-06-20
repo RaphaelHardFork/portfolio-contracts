@@ -10,7 +10,7 @@ import "./abstracts/Shopable.sol";
 import "./interfaces/ICards.sol";
 
 contract Cards is ICards, Reserve, Shopable, ERC1155Supply {
-    string public name = "Useless playing cards";
+    string public name = "Useless (so far) playing cards";
     string public symbol = "CARDS";
 
     uint256 private _lastBoosterId;
