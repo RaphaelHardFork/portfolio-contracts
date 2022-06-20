@@ -35,9 +35,12 @@ contract Cards is ICards, Reserve, Shopable, ERC1155Supply {
         }
         _mint(account, _lastBoosterId, 1, "");
 
-        uint256[] memory cards = _findEdition(
-            _drawReserve(block.number * block.timestamp, 5)
-        );
+        uint256 randomNumber;
+        unchecked {
+            randomNumber = block.number * block.timestamp;
+        }
+
+        uint256[] memory cards = _findEdition(_drawReserve(randomNumber, 5));
 
         _boosterLink[_lastBoosterId] = cards;
         _mintBatch(msg.sender, cards, _cardsAmount, "");
@@ -69,6 +72,18 @@ contract Cards is ICards, Reserve, Shopable, ERC1155Supply {
             );
     }
 
+    function boosterLink(uint256 boosterId)
+        public
+        view
+        returns (uint256[] memory)
+    {
+        return _boosterLink[boosterId];
+    }
+
+    function remainingBooster() public view returns (uint256) {
+        return 1998 - (_lastBoosterId - 10002);
+    }
+
     function _findEdition(uint256[] memory cards_)
         internal
         pure
@@ -77,7 +92,7 @@ contract Cards is ICards, Reserve, Shopable, ERC1155Supply {
         uint256[] memory cards = new uint256[](5);
 
         for (uint256 i = 0; i < 5; ) {
-            uint256 edition = cards_[i] < 9720 ? 1 : 55;
+            uint256 edition = cards_[i] <= 9720 ? 1 : 55;
             cards[i] = ((cards_[i] - 1) % 54) + edition;
             unchecked {
                 ++i;

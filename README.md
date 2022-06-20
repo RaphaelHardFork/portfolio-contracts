@@ -9,7 +9,7 @@ _Ownable's roles like `transferOwnership` are implicit_
 - **FungibleToken:**
   - Can set oracle address
   - Can withdraw eth amount in the contract
-- **Shopable contracts (ColoredToken):**
+- **Shopable contracts (ColoredToken, Cards, UserName):**
   - Owner can set/remove an address as "shop" (controller)
 - **ColoredToken:**
   - Owner can withdraw eth amount in the contract
@@ -23,11 +23,16 @@ _Ownable's roles like `transferOwnership` are implicit_
 
 - burning a token cost 0.00005 ETH, this cost can be avoided by transfering to a random address that not own a token.
 
+### Cards:
+
+- all booster can be bought by one account, but gas would prevent to do so in one transaction.
+- `deliverBooster` use a pseudorandom, the 5 cards linked to a booster are predictable. However user cannot revert the transaction (with `onERC1155Received`) when buying a booster as cards are delivered to the shop contract.
+- `deliverBooster` function is gas expensive (average: 233996, max: 568085)
+
 ---
 
 ## To Do
 
-- test buy all booster / check token URI (booster) / check distribution 180/5
 - test shop/ change shop / several shop
 
 Integrate in the front

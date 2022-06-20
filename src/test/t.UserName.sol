@@ -31,7 +31,7 @@ contract UserName_test is DSTest {
 
     function testCannotSetName() public {
         vm.startPrank(address(2));
-        vm.expectRevert("Only shop have access");
+        vm.expectRevert("Shopable: shop not allowed");
         name.setName("not work", address(1));
 
         vm.startPrank(shop);
