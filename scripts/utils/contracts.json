@@ -1,7 +1,7 @@
 {
-  "ropsten": {
+  "rinkeby": {
     "FungibleToken": {
-      "address": "0x6ADE5565192A85E4899868e887A7491BA4F4706F",
+      "address": "0x8ec931f52F15864C0c3EFF123aEfc1feb971D577",
       "abi": [
         {
           "inputs": [],
@@ -31,6 +31,25 @@
             }
           ],
           "name": "Approval",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
           "type": "event"
         },
         {
@@ -114,6 +133,17 @@
         },
         {
           "inputs": [
+            { "internalType": "uint256", "name": "amount", "type": "uint256" }
+          ],
+          "name": "ethToUsd",
+          "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
             { "internalType": "address", "name": "spender", "type": "address" },
             {
               "internalType": "uint256",
@@ -136,12 +166,50 @@
           "type": "function"
         },
         {
+          "inputs": [
+            { "internalType": "uint256", "name": "amount", "type": "uint256" }
+          ],
+          "name": "mintMore",
+          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
+          "stateMutability": "payable",
+          "type": "function"
+        },
+        {
           "inputs": [],
           "name": "name",
           "outputs": [
             { "internalType": "string", "name": "", "type": "string" }
           ],
           "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "owner",
+          "outputs": [
+            { "internalType": "address", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "renounceOwnership",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "contract Oracle",
+              "name": "oracle",
+              "type": "address"
+            }
+          ],
+          "name": "setOracle",
+          "outputs": [],
+          "stateMutability": "nonpayable",
           "type": "function"
         },
         {
@@ -182,11 +250,38 @@
           "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
           "stateMutability": "nonpayable",
           "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "newOwner", "type": "address" }
+          ],
+          "name": "transferOwnership",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "uint256", "name": "amount", "type": "uint256" }
+          ],
+          "name": "usdToEth",
+          "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "withdraw",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
         }
       ]
     },
     "ColoredToken": {
-      "address": "0x8ec931f52F15864C0c3EFF123aEfc1feb971D577",
+      "address": "0x899506C2c0EF055958dD5685e221409505f10F70",
       "abi": [
         {
           "inputs": [],
@@ -515,7 +610,7 @@
       ]
     },
     "Cards": {
-      "address": "0x899506C2c0EF055958dD5685e221409505f10F70",
+      "address": "0x2dD7A091e6F9759FB38E272E71a55a8c123258Bd",
       "abi": [
         {
           "inputs": [
@@ -547,6 +642,44 @@
             }
           ],
           "name": "ApprovalForAll",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "shop",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "bool",
+              "name": "active",
+              "type": "bool"
+            }
+          ],
+          "name": "ShopManaged",
           "type": "event"
         },
         {
@@ -672,6 +805,21 @@
         },
         {
           "inputs": [
+            {
+              "internalType": "uint256",
+              "name": "boosterId",
+              "type": "uint256"
+            }
+          ],
+          "name": "boosterLink",
+          "outputs": [
+            { "internalType": "uint256[]", "name": "", "type": "uint256[]" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
             { "internalType": "address", "name": "account", "type": "address" }
           ],
           "name": "deliverBooster",
@@ -719,6 +867,31 @@
             { "internalType": "string", "name": "", "type": "string" }
           ],
           "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "owner",
+          "outputs": [
+            { "internalType": "address", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "remainingBooster",
+          "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "renounceOwnership",
+          "outputs": [],
+          "stateMutability": "nonpayable",
           "type": "function"
         },
         {
@@ -787,7 +960,8 @@
         },
         {
           "inputs": [
-            { "internalType": "address", "name": "shop_", "type": "address" }
+            { "internalType": "address", "name": "shop", "type": "address" },
+            { "internalType": "bool", "name": "active", "type": "bool" }
           ],
           "name": "setShop",
           "outputs": [],
@@ -795,11 +969,11 @@
           "type": "function"
         },
         {
-          "inputs": [],
-          "name": "shop",
-          "outputs": [
+          "inputs": [
             { "internalType": "address", "name": "", "type": "address" }
           ],
+          "name": "shops",
+          "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
           "stateMutability": "view",
           "type": "function"
         },
@@ -838,6 +1012,15 @@
         },
         {
           "inputs": [
+            { "internalType": "address", "name": "newOwner", "type": "address" }
+          ],
+          "name": "transferOwnership",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
             { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
           ],
           "name": "uri",
@@ -850,15 +1033,10 @@
       ]
     },
     "Shop": {
-      "address": "0x2dD7A091e6F9759FB38E272E71a55a8c123258Bd",
+      "address": "0x8d80cedB6b70B161405D2a6703fbE152ED6EeA27",
       "abi": [
         {
           "inputs": [
-            {
-              "internalType": "contract IColoredToken",
-              "name": "colorToken",
-              "type": "address"
-            },
             {
               "internalType": "contract IERC20",
               "name": "fungibleToken_",
@@ -870,6 +1048,11 @@
               "type": "address"
             },
             {
+              "internalType": "contract IColoredToken",
+              "name": "colorToken",
+              "type": "address"
+            },
+            {
               "internalType": "contract ICards",
               "name": "cards_",
               "type": "address"
@@ -877,6 +1060,25 @@
           ],
           "stateMutability": "nonpayable",
           "type": "constructor"
+        },
+        {
+          "anonymous": false,
+          "inputs": [
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "previousOwner",
+              "type": "address"
+            },
+            {
+              "indexed": true,
+              "internalType": "address",
+              "name": "newOwner",
+              "type": "address"
+            }
+          ],
+          "name": "OwnershipTransferred",
+          "type": "event"
         },
         {
           "inputs": [],
@@ -914,15 +1116,6 @@
         },
         {
           "inputs": [],
-          "name": "colorPrice",
-          "outputs": [
-            { "internalType": "uint256", "name": "", "type": "uint256" }
-          ],
-          "stateMutability": "view",
-          "type": "function"
-        },
-        {
-          "inputs": [],
           "name": "colors",
           "outputs": [
             {
@@ -939,6 +1132,33 @@
           "name": "fungibleToken",
           "outputs": [
             { "internalType": "contract IERC20", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "getRecipes",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "itemPrice",
+          "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "uint256", "name": "item", "type": "uint256" }
+          ],
+          "name": "itemPrices",
+          "outputs": [
+            { "internalType": "uint256", "name": "", "type": "uint256" }
           ],
           "stateMutability": "view",
           "type": "function"
@@ -996,12 +1216,37 @@
           "type": "function"
         },
         {
+          "inputs": [],
+          "name": "owner",
+          "outputs": [
+            { "internalType": "address", "name": "", "type": "address" }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "renounceOwnership",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
           "inputs": [
             { "internalType": "bytes4", "name": "", "type": "bytes4" }
           ],
           "name": "supportsInterface",
           "outputs": [{ "internalType": "bool", "name": "", "type": "bool" }],
           "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            { "internalType": "address", "name": "newOwner", "type": "address" }
+          ],
+          "name": "transferOwnership",
+          "outputs": [],
+          "stateMutability": "nonpayable",
           "type": "function"
         }
       ]

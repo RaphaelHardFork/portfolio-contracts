@@ -20,28 +20,28 @@ const main = async () => {
   };
 
   const [deployer] = await ethers.getSigners();
-  console.log("Deploying contracts with the account:", deployer.address);
+  console.log("Interacting contracts with the account:", deployer.address);
 
-  const ColoredToken = await hre.ethers.getContractFactory("ColoredToken");
   const UserName = await hre.ethers.getContractFactory("UserName");
+  const ColoredToken = await hre.ethers.getContractFactory("ColoredToken");
   const Cards = await hre.ethers.getContractFactory("Cards");
 
-  const coloredToken = ColoredToken.attach(getAddress("ColoredToken"));
   const userName = UserName.attach(getAddress("UserName"));
+  const coloredToken = ColoredToken.attach(getAddress("ColoredToken"));
   const cards = Cards.attach(getAddress("Cards"));
 
   const shopAddr = getAddress("Shop");
 
-  console.log("Set shop on ColoredToken");
-  let tx = await coloredToken.setShop(shopAddr);
+  console.log("Set shop on UserName");
+  let tx = await userName.setShop(shopAddr, true);
   await tx.wait();
 
-  console.log("Set shop on UserName");
-  tx = await userName.setShop(shopAddr);
+  console.log("Set shop on ColoredToken");
+  tx = await coloredToken.setShop(shopAddr, true);
   await tx.wait();
 
   console.log("Set shop on Cards");
-  tx = await cards.setShop(shopAddr);
+  tx = await cards.setShop(shopAddr, true);
   await tx.wait();
 };
 

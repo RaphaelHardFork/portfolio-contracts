@@ -6,6 +6,11 @@
         "address": "0x6ADE5565192A85E4899868e887A7491BA4F4706F",
         "isVerified": true,
         "isProxy": false
+      },
+      "rinkeby": {
+        "address": "0x8ec931f52F15864C0c3EFF123aEfc1feb971D577",
+        "isVerified": true,
+        "isProxy": false
       }
     },
     "ColoredToken": {
@@ -13,10 +18,20 @@
         "address": "0x8ec931f52F15864C0c3EFF123aEfc1feb971D577",
         "isVerified": true,
         "isProxy": false
+      },
+      "rinkeby": {
+        "address": "0x899506C2c0EF055958dD5685e221409505f10F70",
+        "isVerified": true,
+        "isProxy": false
       }
     },
     "UserName": {
       "ropsten": {
+        "address": "0x9481fD9C50a70b085fA51e82aCA381e9389b7550",
+        "isVerified": true,
+        "isProxy": false
+      },
+      "rinkeby": {
         "address": "0x9481fD9C50a70b085fA51e82aCA381e9389b7550",
         "isVerified": true,
         "isProxy": false
@@ -30,6 +45,14 @@
         ],
         "isVerified": true,
         "isProxy": false
+      },
+      "rinkeby": {
+        "address": "0x2dD7A091e6F9759FB38E272E71a55a8c123258Bd",
+        "constructorArgs": [
+          "ipfs://bafybeifgpkdjbbreojpecjf53tb2ffflvee5cewmrvslza7di3ng2mta6u"
+        ],
+        "isVerified": false,
+        "isProxy": false
       }
     },
     "Shop": {
@@ -40,6 +63,17 @@
           "0x6ADE5565192A85E4899868e887A7491BA4F4706F",
           "0x9481fD9C50a70b085fA51e82aCA381e9389b7550",
           "0x899506C2c0EF055958dD5685e221409505f10F70"
+        ],
+        "isVerified": true,
+        "isProxy": false
+      },
+      "rinkeby": {
+        "address": "0x8d80cedB6b70B161405D2a6703fbE152ED6EeA27",
+        "constructorArgs": [
+          "0x8ec931f52F15864C0c3EFF123aEfc1feb971D577",
+          "0x9481fD9C50a70b085fA51e82aCA381e9389b7550",
+          "0x899506C2c0EF055958dD5685e221409505f10F70",
+          "0x2dD7A091e6F9759FB38E272E71a55a8c123258Bd"
         ],
         "isVerified": true,
         "isProxy": false

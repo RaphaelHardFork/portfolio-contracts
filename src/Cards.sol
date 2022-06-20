@@ -60,7 +60,7 @@ contract Cards is ICards, Reserve, Shopable, ERC1155Supply {
     function uri(uint256 tokenId) public view override returns (string memory) {
         string memory stringId = tokenId >= 10000
             ? "10000"
-            : Strings.toString(tokenId);
+            : Strings.toString(tokenId - 1);
 
         return
             string(

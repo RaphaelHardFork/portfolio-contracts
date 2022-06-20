@@ -3,15 +3,15 @@ import hre, { ethers } from "hardhat";
 import { deployed } from "./utils/deployment";
 
 const CONTRACT_NAME = "Cards";
+const IPFS_HASH =
+  "ipfs://bafybeifgpkdjbbreojpecjf53tb2ffflvee5cewmrvslza7di3ng2mta6u";
 
 const main = async () => {
   const [deployer] = await ethers.getSigners();
   console.log("Deploying contracts with the account:", deployer.address);
 
   const Cards = await hre.ethers.getContractFactory(CONTRACT_NAME);
-  const token = await Cards.deploy(
-    "ipfs://QmbPYzLk4hzRttP5qWpueUQzs8gnSHEdeV9fpNdsGChXUt/"
-  );
+  const token = await Cards.deploy(IPFS_HASH);
   await token.deployed();
 
   // save into deployed.json
@@ -19,7 +19,7 @@ const main = async () => {
     CONTRACT_NAME,
     hre.network.name,
     token.address,
-    ["ipfs://QmbPYzLk4hzRttP5qWpueUQzs8gnSHEdeV9fpNdsGChXUt/"],
+    [IPFS_HASH],
     undefined
   );
 };

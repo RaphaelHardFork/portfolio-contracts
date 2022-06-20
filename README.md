@@ -47,7 +47,10 @@ _network(pair|decimal)_
 
 ## To Do
 
-Integrate in the front
+Metadata:
+
+- contractURI => description =! contract uri
+- ColoredToken exist?
 
 - _owner is time-locked multisig => centralise owner so (can be done after with transferOwnership)_
 

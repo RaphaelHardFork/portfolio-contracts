@@ -24,9 +24,9 @@ const main = async () => {
 
   const Shop = await hre.ethers.getContractFactory(CONTRACT_NAME);
   const token = await Shop.deploy(
-    contracts["ColoredToken"][hre.network.name].address,
     contracts["FungibleToken"][hre.network.name].address,
     contracts["UserName"][hre.network.name].address,
+    contracts["ColoredToken"][hre.network.name].address,
     contracts["Cards"][hre.network.name].address
   );
   await token.deployed();
@@ -37,9 +37,9 @@ const main = async () => {
     hre.network.name,
     token.address,
     [
-      contracts["ColoredToken"][hre.network.name].address,
       contracts["FungibleToken"][hre.network.name].address,
       contracts["UserName"][hre.network.name].address,
+      contracts["ColoredToken"][hre.network.name].address,
       contracts["Cards"][hre.network.name].address,
     ],
     undefined

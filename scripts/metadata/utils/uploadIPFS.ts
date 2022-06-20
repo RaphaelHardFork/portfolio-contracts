@@ -4,6 +4,11 @@ import pinataSDK from "@pinata/sdk";
 const PINATA_KEY = process.env.PINATA_KEY;
 const PINATA_SECRET_KEY = process.env.PINATA_SECRET_KEY;
 
+/**
+ * Convert CIDv0 to CIDv1:
+ * ipfs cid base32 Qm...
+ */
+
 export const uploadSvg = async (sourcePath: string, name: string) => {
   let pinata;
   if (PINATA_KEY !== undefined && PINATA_SECRET_KEY !== undefined) {

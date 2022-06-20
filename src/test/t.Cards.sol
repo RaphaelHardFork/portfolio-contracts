@@ -116,7 +116,8 @@ contract Cards_test is DSTest, Test {
     }
 
     function testUri() public {
-        assertEq(cards.uri(69), "ipfs://{hash}/69.json");
+        assertEq(cards.uri(1), "ipfs://{hash}/0.json");
+        assertEq(cards.uri(69), "ipfs://{hash}/68.json");
         assertEq(cards.uri(10000), "ipfs://{hash}/10000.json");
         assertEq(cards.uri(19000), "ipfs://{hash}/10000.json");
     }
