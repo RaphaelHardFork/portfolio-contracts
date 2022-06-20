@@ -3,12 +3,14 @@
 pragma solidity ^0.8.13;
 
 import "ds-test/test.sol";
-import "./cheatCodes.sol";
+import "forge-std/Vm.sol";
+
 import "../library/IdToColor.sol";
 
 contract IdToColor_test is DSTest {
     using IdToColor for uint256;
-    CheatCodes vm = CheatCodes(HEVM_ADDRESS);
+
+    Vm vm = Vm(HEVM_ADDRESS);
 
     function testOutput() public {
         uint256 color = 0x1a0000;

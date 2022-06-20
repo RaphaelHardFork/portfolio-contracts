@@ -3,11 +3,13 @@
 pragma solidity ^0.8.10;
 
 import "ds-test/test.sol";
+import "forge-std/Vm.sol";
+
 import "../ColoredToken.sol";
-import "./cheatCodes.sol";
 
 contract ColoredToken_test is DSTest {
-    CheatCodes vm = CheatCodes(HEVM_ADDRESS);
+    Vm vm = Vm(HEVM_ADDRESS);
+
     address public constant SHOP = address(501); // mock for shop
     address public constant OWNER = address(301);
     ColoredToken public nft;

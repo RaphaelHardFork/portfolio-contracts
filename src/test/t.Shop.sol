@@ -3,7 +3,8 @@
 pragma solidity ^0.8.10;
 
 import "ds-test/test.sol";
-import "./cheatCodes.sol";
+import "forge-std/Vm.sol";
+
 import "../UserName.sol";
 import "../Shop.sol";
 import "../FungibleToken.sol";
@@ -11,7 +12,7 @@ import "../ColoredToken.sol";
 import "../Cards.sol";
 
 contract Shop_test is DSTest {
-    CheatCodes vm = CheatCodes(HEVM_ADDRESS);
+    Vm vm = Vm(HEVM_ADDRESS);
     FungibleToken public money;
     ColoredToken public nft;
     Shop public shop;
@@ -24,9 +25,9 @@ contract Shop_test is DSTest {
         names = new UserName();
         cards = new Cards("ipfs://{hash}/");
         shop = new Shop(nft, money, names, cards);
-        nft.setShop(address(shop));
-        names.setShop(address(shop));
-        cards.setShop(address(shop));
+        nft.setShop(address(shop), true);
+        names.setShop(address(shop), true);
+        cards.setShop(address(shop), true);
     }
 
     function testBuyColor(uint256 id_) public {

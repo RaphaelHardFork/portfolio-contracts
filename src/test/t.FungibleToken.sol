@@ -3,8 +3,9 @@
 pragma solidity ^0.8.10;
 
 import "ds-test/test.sol";
+import "forge-std/Vm.sol";
+
 import "../FungibleToken.sol";
-import "./cheatCodes.sol";
 
 contract ETHOracle {
     function lastestAnswer() external pure returns (int256) {
@@ -13,7 +14,7 @@ contract ETHOracle {
 }
 
 contract FungibleToken_test is DSTest {
-    CheatCodes vm = CheatCodes(HEVM_ADDRESS);
+    Vm vm = Vm(HEVM_ADDRESS);
     address constant OWNER = address(501);
     FungibleToken public ft;
     Oracle public oracle;

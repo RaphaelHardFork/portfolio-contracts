@@ -3,8 +3,9 @@
 pragma solidity ^0.8.10;
 
 import "ds-test/test.sol";
+import "forge-std/Vm.sol";
+
 import "../abstracts/Reserve.sol";
-import "./cheatCodes.sol";
 
 contract ReserveMock is Reserve {
     function drawReserve(uint256 draws)
@@ -20,7 +21,7 @@ contract ReserveMock is Reserve {
 }
 
 contract Reserve_test is DSTest {
-    CheatCodes cheats = CheatCodes(HEVM_ADDRESS);
+    Vm vm = Vm(HEVM_ADDRESS);
     ReserveMock reserve;
 
     function setUp() public {
@@ -49,12 +50,12 @@ contract Reserve_test is DSTest {
     }
 
     function testCannotSetReserve() public {
-        cheats.expectRevert(bytes("Reserve still active"));
+        vm.expectRevert(bytes("Reserve still active"));
         reserve.setReserve(200);
     }
 
     function testCannotDrawMoreThan10() public {
-        cheats.expectRevert(bytes("Too much draws"));
+        vm.expectRevert(bytes("Too much draws"));
         reserve.drawReserve(20);
     }
 
@@ -63,7 +64,7 @@ contract Reserve_test is DSTest {
             reserve.drawReserve(10);
         }
         reserve.drawReserve(5);
-        cheats.expectRevert(bytes("No more items in reserve"));
+        vm.expectRevert(bytes("No more items in reserve"));
         reserve.drawReserve(10);
     }
 }

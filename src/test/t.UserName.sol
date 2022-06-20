@@ -3,17 +3,18 @@
 pragma solidity ^0.8.13;
 
 import "ds-test/test.sol";
-import "./cheatCodes.sol";
+import "forge-std/Vm.sol";
+
 import "../UserName.sol";
 
 contract UserName_test is DSTest {
-    CheatCodes vm = CheatCodes(HEVM_ADDRESS);
+    Vm vm = Vm(HEVM_ADDRESS);
     UserName public name;
     address public shop = address(1);
 
     function setUp() public {
         name = new UserName();
-        name.setShop(shop);
+        name.setShop(shop, true);
     }
 
     function testSetName() public {
