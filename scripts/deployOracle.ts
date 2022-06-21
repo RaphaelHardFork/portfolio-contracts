@@ -6,13 +6,13 @@ const main = async () => {
   const [deployer] = await ethers.getSigners();
   console.log("Deploying contracts with the account:", deployer.address);
 
-  const Oracle = await hre.ethers.getContractFactory("OracleETHAt1000");
+  const Oracle = await hre.ethers.getContractFactory("MockOracle");
   const oracle = await Oracle.deploy();
   await oracle.deployed();
 
   // save into deployed.json
   await deployed(
-    "OracleETHAt1000",
+    "MockOracle",
     hre.network.name,
     oracle.address,
     undefined,

@@ -25,7 +25,7 @@ const main = async () => {
   const FungibleToken = await hre.ethers.getContractFactory("FungibleToken");
   const fungibleToken = FungibleToken.attach(getAddress("FungibleToken"));
 
-  const oracleAddr = "0x8A753747A1Fa494EC906cE90E9f37563A8AF630e";
+  const oracleAddr = "0xfd958070222D6FbC02680C9A81b049dEAc5D0744";
 
   console.log("Set oracle on FungibleToken");
   console.log(`Set oracle: ${oracleAddr} on ${fungibleToken.address}`);
