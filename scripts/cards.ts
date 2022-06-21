@@ -4,7 +4,7 @@ import { deployed } from "./utils/deployment";
 
 const CONTRACT_NAME = "Cards";
 const IPFS_HASH =
-  "ipfs://bafybeifgpkdjbbreojpecjf53tb2ffflvee5cewmrvslza7di3ng2mta6u";
+  "ipfs://bafybeidq3zoe2r2tjpo5rt43sljcybtst3zcvu7d7cbsuku2d7y7xywjni";
 
 const main = async () => {
   const [deployer] = await ethers.getSigners();

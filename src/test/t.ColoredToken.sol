@@ -129,4 +129,9 @@ contract ColoredToken_test is DSTest {
         vm.expectRevert("Ownable: caller is not the owner");
         nft.setShop(shop, true);
     }
+
+    function testPrintURI() public {
+        emit log_string(nft.contractURI());
+        emit log_string(nft.tokenURI(0xFFFFFF));
+    }
 }

@@ -35,9 +35,9 @@ contract FungibleToken is ERC20, Ownable {
         return true;
     }
 
-    function setOracle(Oracle oracle) external onlyOwner {
-        require(oracle.lastestAnswer() > 0, "Oracle is not working");
-        _oracle = oracle;
+    function setOracle(address oracle) external onlyOwner {
+        require(oracle != address(0), "Oracle is not address zero");
+        _oracle = Oracle(oracle);
     }
 
     function withdraw() external onlyOwner {

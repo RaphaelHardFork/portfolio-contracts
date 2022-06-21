@@ -21,9 +21,10 @@ contract FungibleToken_test is DSTest {
 
     function setUp() public {
         address _oracle = address(new ETHOracle());
+        oracle = Oracle(_oracle);
         vm.startPrank(OWNER);
         ft = new FungibleToken();
-        ft.setOracle(Oracle(_oracle));
+        ft.setOracle(_oracle);
     }
 
     function testMint(uint256 amount) public {
@@ -95,7 +96,7 @@ contract FungibleToken_test is DSTest {
         ft.mintMore{value: 5 * 10**18}(500 * 10**18);
 
         vm.expectRevert(bytes("Ownable: caller is not the owner"));
-        ft.setOracle(Oracle(address(2)));
+        ft.setOracle(address(2));
 
         vm.expectRevert(bytes("Ownable: caller is not the owner"));
         ft.withdraw();
@@ -110,5 +111,11 @@ contract FungibleToken_test is DSTest {
         uint256 ethOutput = ft.usdToEth(500000);
         assertEq(usdOutput, 52500);
         assertEq(ethOutput, 476);
+    }
+
+    function testCannotSetOracle() public {
+        vm.startPrank(OWNER);
+        vm.expectRevert("Oracle is not address zero");
+        ft.setOracle(address(0));
     }
 }
