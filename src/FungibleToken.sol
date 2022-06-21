@@ -8,12 +8,24 @@ import "openzeppelin-contracts/contracts/utils/Address.sol";
 
 interface Oracle {
     function lastestAnswer() external view returns (int256);
+
+    function latestRoundData()
+        external
+        pure
+        returns (
+            uint80,
+            int256,
+            uint256,
+            uint256,
+            uint80
+        );
 }
 
 contract FungibleToken is ERC20, Ownable {
     using Address for address payable;
 
     uint256 internal constant PRECISION = 10**25;
+    uint256 internal constant ETHER = 10**18;
     Oracle private _oracle;
 
     constructor() ERC20("FungibleToken", "FT") {}
@@ -45,20 +57,18 @@ contract FungibleToken is ERC20, Ownable {
     }
 
     function ethToUsd(uint256 amount) public view returns (uint256) {
-        // amount in wei
-        return
-            amount *
-            ((
-                ((((uint256(_oracle.lastestAnswer()) * PRECISION) / 10**8) *
-                    10**18) / PRECISION)
-            ) / 10**18);
+        uint256 price = _priceToDecimal18();
+        return (amount * price) / ETHER;
     }
 
     function usdToEth(uint256 amount) public view returns (uint256) {
-        // amount in wei
-        return
-            amount /
-            (((((uint256(_oracle.lastestAnswer()) * PRECISION) / 10**8) *
-                10**18) / PRECISION) / 10**18);
+        uint256 price = _priceToDecimal18();
+        return (amount * ETHER) / price;
+    }
+
+    function _priceToDecimal18() internal view returns (uint256) {
+        (, int256 price, , , ) = _oracle.latestRoundData();
+        uint256 priceConverted = (uint256(price) * PRECISION) / 10**8;
+        return (priceConverted * ETHER) / PRECISION;
     }
 }

@@ -11,6 +11,20 @@ contract ETHOracle {
     function lastestAnswer() external pure returns (int256) {
         return 1050 * 10**8;
     }
+
+    function latestRoundData()
+        external
+        pure
+        returns (
+            uint80,
+            int256 answer,
+            uint256,
+            uint256,
+            uint80
+        )
+    {
+        answer = 1050 * 10**8;
+    }
 }
 
 contract FungibleToken_test is DSTest {
@@ -107,8 +121,8 @@ contract FungibleToken_test is DSTest {
         // 500 000 wei usd = 476 wei eth
         // 50 wei eth = 52499 wei usd
 
-        uint256 usdOutput = ft.ethToUsd(50);
-        uint256 ethOutput = ft.usdToEth(500000);
+        uint256 usdOutput = ft.ethToUsd(50 * 10**18);
+        uint256 ethOutput = ft.usdToEth(500000 * 10**18);
         assertEq(usdOutput, 52500);
         assertEq(ethOutput, 476);
     }

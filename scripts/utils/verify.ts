@@ -17,6 +17,7 @@ const main = async () => {
   console.log(`Verifying following contracts on ${hre.network.name}:`);
 
   for (const contractName of parsedJson.list) {
+    if (!parsedJson.contracts[contractName][hre.network.name]) continue;
     if (!parsedJson.contracts[contractName][hre.network.name].isVerified) {
       try {
         console.log(`${contractName} verification on ${hre.network.name}...`);
