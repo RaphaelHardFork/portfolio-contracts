@@ -1,33 +1,40 @@
 {
-  "list": ["FungibleToken", "ColoredToken", "UserName", "Cards", "Shop"],
+  "list": [
+    "FungibleToken",
+    "ColoredToken",
+    "UserName",
+    "Cards",
+    "Shop",
+    "OracleETHAt1000"
+  ],
   "contracts": {
     "FungibleToken": {
       "ropsten": {
-        "address": "0x6ADE5565192A85E4899868e887A7491BA4F4706F",
+        "address": "0x1a9c921AC5047a1E3DEf3659CCa03BC7c9926499",
         "isVerified": true,
         "isProxy": false
       },
       "rinkeby": {
-        "address": "0x8ec931f52F15864C0c3EFF123aEfc1feb971D577",
+        "address": "0x1a9c921AC5047a1E3DEf3659CCa03BC7c9926499",
         "isVerified": true,
         "isProxy": false
       }
     },
     "ColoredToken": {
       "ropsten": {
-        "address": "0x8ec931f52F15864C0c3EFF123aEfc1feb971D577",
+        "address": "0xa049c2F836DD8F1160B64C1d32f7475C82751b6F",
         "isVerified": true,
         "isProxy": false
       },
       "rinkeby": {
-        "address": "0x899506C2c0EF055958dD5685e221409505f10F70",
+        "address": "0xf7124BABed496cca792F27676AB098a6BE1e2A41",
         "isVerified": true,
         "isProxy": false
       }
     },
     "UserName": {
       "ropsten": {
-        "address": "0x9481fD9C50a70b085fA51e82aCA381e9389b7550",
+        "address": "0xec07673301568B2c84A7396bAf613cA87CD0886C",
         "isVerified": true,
         "isProxy": false
       },
@@ -39,42 +46,49 @@
     },
     "Cards": {
       "ropsten": {
-        "address": "0x899506C2c0EF055958dD5685e221409505f10F70",
+        "address": "0x57A4e09bd5A58a00a8015931BDc248473FA9bb79",
         "constructorArgs": [
-          "ipfs://QmbPYzLk4hzRttP5qWpueUQzs8gnSHEdeV9fpNdsGChXUt/"
+          "ipfs://bafybeidq3zoe2r2tjpo5rt43sljcybtst3zcvu7d7cbsuku2d7y7xywjni"
         ],
         "isVerified": true,
         "isProxy": false
       },
       "rinkeby": {
-        "address": "0x2dD7A091e6F9759FB38E272E71a55a8c123258Bd",
+        "address": "0xa049c2F836DD8F1160B64C1d32f7475C82751b6F",
         "constructorArgs": [
-          "ipfs://bafybeifgpkdjbbreojpecjf53tb2ffflvee5cewmrvslza7di3ng2mta6u"
+          "ipfs://bafybeidq3zoe2r2tjpo5rt43sljcybtst3zcvu7d7cbsuku2d7y7xywjni"
         ],
-        "isVerified": false,
+        "isVerified": true,
         "isProxy": false
       }
     },
     "Shop": {
       "ropsten": {
-        "address": "0x2dD7A091e6F9759FB38E272E71a55a8c123258Bd",
+        "address": "0xc73C4c325c7Fd33c3Ca61eF7c39f9E8756dA924c",
         "constructorArgs": [
-          "0x8ec931f52F15864C0c3EFF123aEfc1feb971D577",
-          "0x6ADE5565192A85E4899868e887A7491BA4F4706F",
-          "0x9481fD9C50a70b085fA51e82aCA381e9389b7550",
-          "0x899506C2c0EF055958dD5685e221409505f10F70"
+          "0x1a9c921AC5047a1E3DEf3659CCa03BC7c9926499",
+          "0xec07673301568B2c84A7396bAf613cA87CD0886C",
+          "0xa049c2F836DD8F1160B64C1d32f7475C82751b6F",
+          "0x57A4e09bd5A58a00a8015931BDc248473FA9bb79"
         ],
         "isVerified": true,
         "isProxy": false
       },
       "rinkeby": {
-        "address": "0x8d80cedB6b70B161405D2a6703fbE152ED6EeA27",
+        "address": "0x57A4e09bd5A58a00a8015931BDc248473FA9bb79",
         "constructorArgs": [
-          "0x8ec931f52F15864C0c3EFF123aEfc1feb971D577",
+          "0x1a9c921AC5047a1E3DEf3659CCa03BC7c9926499",
           "0x9481fD9C50a70b085fA51e82aCA381e9389b7550",
-          "0x899506C2c0EF055958dD5685e221409505f10F70",
-          "0x2dD7A091e6F9759FB38E272E71a55a8c123258Bd"
+          "0xf7124BABed496cca792F27676AB098a6BE1e2A41",
+          "0xa049c2F836DD8F1160B64C1d32f7475C82751b6F"
         ],
+        "isVerified": true,
+        "isProxy": false
+      }
+    },
+    "OracleETHAt1000": {
+      "ropsten": {
+        "address": "0xf1F128980059c0C9B8FBD355cbf29070c01aD816",
         "isVerified": true,
         "isProxy": false
       }

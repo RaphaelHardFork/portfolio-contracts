@@ -37,6 +37,9 @@ _network(pair|decimal)_
 
 **Rinkeby (ETH/USD|8):** 0x8A753747A1Fa494EC906cE90E9f37563A8AF630e
 
+No oracle deployed on Ropsten, mock oracle deployed with a fixed price of 1000$/ETH  
+**Ropsten (ETH/USD|8):** 0xf1F128980059c0C9B8FBD355cbf29070c01aD816
+
 **Polygon (MATIC/USD|8):** 0xAB594600376Ec9fD91F8e885dADF0CE036862dE0
 
 ### Flux
@@ -46,11 +49,6 @@ _network(pair|decimal)_
 ---
 
 ## To Do
-
-Metadata:
-
-- contractURI => description =! contract uri
-- ColoredToken exist?
 
 - _owner is time-locked multisig => centralise owner so (can be done after with transferOwnership)_
 
