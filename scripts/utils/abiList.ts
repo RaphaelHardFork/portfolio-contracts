@@ -31,6 +31,7 @@ const createList = async () => {
   const _chain: Chain = {};
 
   for (const contract of parsedJson.list) {
+    if (!parsedJson.contracts[contract][hre.network.name]) continue;
     _contract.address =
       parsedJson.contracts[contract][hre.network.name].address;
 
