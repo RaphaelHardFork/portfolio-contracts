@@ -750,7 +750,7 @@
       ]
     },
     "Cards": {
-      "address": "0xa049c2F836DD8F1160B64C1d32f7475C82751b6F",
+      "address": "0xD4d10c93e548302D6a175B77FdFb64e797982d74",
       "abi": [
         {
           "inputs": [
@@ -1173,7 +1173,7 @@
       ]
     },
     "Shop": {
-      "address": "0x03987779C648F2f8F3dbaCf5C5aFab38f6Ca7283",
+      "address": "0x029dFC26C46B4C07139FaB8bfCF824b7fc5bB7Dc",
       "abi": [
         {
           "inputs": [

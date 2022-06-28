@@ -46,17 +46,17 @@
     },
     "Cards": {
       "ropsten": {
-        "address": "0x57A4e09bd5A58a00a8015931BDc248473FA9bb79",
+        "address": "0x029dFC26C46B4C07139FaB8bfCF824b7fc5bB7Dc",
         "constructorArgs": [
-          "ipfs://bafybeidq3zoe2r2tjpo5rt43sljcybtst3zcvu7d7cbsuku2d7y7xywjni"
+          "ipfs://bafybeidq3zoe2r2tjpo5rt43sljcybtst3zcvu7d7cbsuku2d7y7xywjni/"
         ],
         "isVerified": true,
         "isProxy": false
       },
       "rinkeby": {
-        "address": "0xa049c2F836DD8F1160B64C1d32f7475C82751b6F",
+        "address": "0xD4d10c93e548302D6a175B77FdFb64e797982d74",
         "constructorArgs": [
-          "ipfs://bafybeidq3zoe2r2tjpo5rt43sljcybtst3zcvu7d7cbsuku2d7y7xywjni"
+          "ipfs://bafybeidq3zoe2r2tjpo5rt43sljcybtst3zcvu7d7cbsuku2d7y7xywjni/"
         ],
         "isVerified": true,
         "isProxy": false
@@ -64,23 +64,23 @@
     },
     "Shop": {
       "ropsten": {
-        "address": "0xD4d10c93e548302D6a175B77FdFb64e797982d74",
+        "address": "0x0D72cbcABE13EC7C59432970508bc4f6146C386a",
         "constructorArgs": [
           "0xeB667d178f80e47d077E7D1a23a7ebB763D54a66",
           "0xec07673301568B2c84A7396bAf613cA87CD0886C",
           "0xa049c2F836DD8F1160B64C1d32f7475C82751b6F",
-          "0x57A4e09bd5A58a00a8015931BDc248473FA9bb79"
+          "0x029dFC26C46B4C07139FaB8bfCF824b7fc5bB7Dc"
         ],
         "isVerified": true,
         "isProxy": false
       },
       "rinkeby": {
-        "address": "0x03987779C648F2f8F3dbaCf5C5aFab38f6Ca7283",
+        "address": "0x029dFC26C46B4C07139FaB8bfCF824b7fc5bB7Dc",
         "constructorArgs": [
           "0xB3589b251306F54B66f69d9E46A4E458d3969531",
           "0x9481fD9C50a70b085fA51e82aCA381e9389b7550",
           "0xf7124BABed496cca792F27676AB098a6BE1e2A41",
-          "0xa049c2F836DD8F1160B64C1d32f7475C82751b6F"
+          "0xD4d10c93e548302D6a175B77FdFb64e797982d74"
         ],
         "isVerified": true,
         "isProxy": false

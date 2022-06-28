@@ -32,8 +32,10 @@ const main = async () => {
 
   const shopAddr = getAddress("Shop");
 
+  let tx;
+
   console.log("Set shop on UserName");
-  let tx = await userName.setShop(shopAddr, true);
+  tx = await userName.setShop(shopAddr, true);
   await tx.wait();
 
   console.log("Set shop on ColoredToken");
