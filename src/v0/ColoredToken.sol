@@ -7,9 +7,9 @@ import "openzeppelin-contracts/contracts/utils/Address.sol";
 import "openzeppelin-contracts/contracts/utils/Base64.sol";
 import "openzeppelin-contracts/contracts/utils/Strings.sol";
 
-import "./library/IdToColor.sol";
-import "./interfaces/IColoredToken.sol";
-import "./abstracts/Shopable.sol";
+import "../library/IdToColor.sol";
+import "../interfaces/IColoredToken.sol";
+import "../abstracts/Shopable.sol";
 
 contract ColoredToken is ERC721, IColoredToken, Shopable {
     using Address for address payable;

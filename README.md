@@ -48,6 +48,10 @@ No oracle deployed on Ropsten, mock oracle deployed with a fixed price of 1000$/
 
 ---
 
+## This branch
+
+- integrate UUPS in the `deployed.json`
+
 ## To Do
 
 - _owner is time-locked multisig => centralise owner so (can be done after with transferOwnership)_

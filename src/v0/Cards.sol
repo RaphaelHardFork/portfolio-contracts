@@ -5,9 +5,9 @@ pragma solidity ^0.8.13;
 import "openzeppelin-contracts/contracts/token/ERC1155/extensions/ERC1155Supply.sol";
 import "openzeppelin-contracts/contracts/utils/Strings.sol";
 
-import "./abstracts/Reserve.sol";
-import "./abstracts/Shopable.sol";
-import "./interfaces/ICards.sol";
+import "../abstracts/Reserve.sol";
+import "../abstracts/Shopable.sol";
+import "../interfaces/v0/ICards.sol";
 
 contract Cards is ICards, Reserve, Shopable, ERC1155Supply {
     string public name = "Useless (so far) playing cards";

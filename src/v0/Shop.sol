@@ -7,9 +7,9 @@ import "openzeppelin-contracts/contracts/token/ERC1155/IERC1155Receiver.sol";
 import "openzeppelin-contracts/contracts/token/ERC1155/IERC1155.sol";
 import "openzeppelin-contracts/contracts/access/Ownable.sol";
 
-import "./interfaces/IColoredToken.sol";
-import "./interfaces/IUserName.sol";
-import "./interfaces/ICards.sol";
+import "../interfaces/IColoredToken.sol";
+import "../interfaces/IUserName.sol";
+import "../interfaces/ICards.sol";
 
 contract Shop is IERC1155Receiver, Ownable {
     uint256 public immutable itemPrice;
